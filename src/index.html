@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBehavior - Sistema de Seguimiento de Conducta Escolar</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📊 MyBehavior</h1>
+            <p>Sistema Inteligente de Seguimiento de Conducta Escolar</p>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="navbar">
+            <button class="nav-btn active" data-section="weekly">📈 Cambio Semanal</button>
+            <button class="nav-btn" data-section="analytics">📉 Analytics</button>
+            <button class="nav-btn" data-section="students">👥 Estudiantes</button>
+            <button class="nav-btn" data-section="decisions">📝 Decisiones</button>
+        </div>
+
+        <!-- ============================================
+             SECCIÓN 1: CAMBIO SEMANAL
+             ============================================ -->
+        <div id="weekly" class="section active">
+            <h2>📊 Comparativa Semanal</h2>
+
+            <!-- Comparación Visual -->
+            <div class="comparison-container">
+                <div class="week-card">
+                    <h3>📅 Semana Anterior</h3>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <span class="label">Puntuación Total</span>
+                            <span class="value neutral">67.3</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Conductas Positivas</span>
+                            <span class="value positive">456</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Conductas Negativas</span>
+                            <span class="value negative">234</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Promedio por Alumno</span>
+                            <span class="value neutral">6.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-arrow">→</div>
+
+                <div class="week-card highlight">
+                    <h3>✨ Semana Actual</h3>
+                    <div class="week-stats">
+                        <div class="stat">
+                            <span class="label">Puntuación Total</span>
+                            <span class="value neutral">76.8</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Conductas Positivas</span>
+                            <span class="value positive">520</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Conductas Negativas</span>
+                            <span class="value negative">198</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Promedio por Alumno</span>
+                            <span class="value neutral">7.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de Cambios -->
+            <div class="change-summary">
+                <div class="change-item positive">
+                    <span>📈 Puntuación Total</span>
+                    <strong>+14.3%</strong>
+                </div>
+                <div class="change-item positive">
+                    <span>✅ Conductas Positivas</span>
+                    <strong>+64 eventos</strong>
+                </div>
+                <div class="change-item positive">
+                    <span>🛑 Conductas Negativas</span>
+                    <strong>-36 eventos</strong>
+                </div>
+                <div class="change-item positive">
+                    <span>⭐ Promedio Estudiantes</span>
+                    <strong>+1.0 puntos</strong>
+                </div>
+            </div>
+
+            <!-- Gráfico de Tendencia -->
+            <div class="card">
+                <h3>📊 Evolución Semanal</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+
+            <!-- Gráfico de Conductas -->
+            <div class="card mt-20">
+                <h3>📊 Distribución de Conductas</h3>
+                <canvas id="categoryTrendChart"></canvas>
+            </div>
+
+            <!-- Recomendaciones -->
+            <div class="card mt-20" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.05);">
+                <h3>💡 Recomendaciones basadas en el análisis</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">✅ <strong>Tendencia Positiva:</strong> El aumento en conductas positivas es alentador. Mantener las estrategias actuales.</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">⚠️ <strong>Enfoque en Riesgo:</strong> Los estudiantes con puntuación &lt;4.0 necesitan intervención inmediata.</li>
+                    <li style="padding: 10px 0;">🎯 <strong>Próximo Paso:</strong> Celebrar mejoras y documentar las medidas efectivas para replicarlas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================
+             SECCIÓN 2: ANALYTICS
+             ============================================ -->
+        <div id="analytics" class="section">
+            <h2>📊 Dashboard de Analytics</h2>
+
+            <!-- Métricas Principales -->
+            <div class="analytics-grid">
+                <div class="card">
+                    <h3>🏆 Top 5 Mejores Estudiantes</h3>
+                    <table class="analytics-table">
+                        <thead>
+                            <tr>
+                                <th>Estudiante</th>
+                                <th>Puntuación</th>
+                                <th>Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juan Pérez</td>
+                                <td><strong>9.5</strong></td>
+                                <td><span class="badge excellent">Excelente</span></td>
+                            </tr>
+                            <tr>
+                                <td>María García</td>
+                                <td><strong>9.2</strong></td>
+                                <td><span class="badge excellent">Excelente</span></td>
+                            </tr>
+                            <tr>
+                                <td>Carlos López</td>
+                                <td><strong>8.8</strong></td>
+                                <td><span class="badge good">Bueno</span></td>
+                            </tr>
+                            <tr>
+                                <td>Ana Martínez</td>
+                                <td><strong>8.5</strong></td>
+                                <td><span class="badge good">Bueno</span></td>
+                            </tr>
+                            <tr>
+                                <td>Roberto Silva</td>
+                                <td><strong>8.3</strong></td>
+                                <td><span class="badge good">Bueno</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>⚠️ Estudiantes en Riesgo</h3>
+                    <table class="analytics-table">
+                        <thead>
+                            <tr>
+                                <th>Estudiante</th>
+                                <th>Puntuación</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Diego Rodríguez</td>
+                                <td><strong style="color: #ef4444;">2.1</strong></td>
+                                <td><span class="badge-alert">🔴 CRÍTICO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Laura Fernández</td>
+                                <td><strong style="color: #f59e0b;">3.5</strong></td>
+                                <td><span class="badge warning">⚠️ ALERTA</span></td>
+                            </tr>
+                            <tr>
+                                <td>Felipe Gómez</td>
+                                <td><strong style="color: #f59e0b;">4.0</strong></td>
+                                <td><span class="badge warning">⚠️ ALERTA</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sofía Torres</td>
+                                <td><strong style="color: #f59e0b;">4.2</strong></td>
+                                <td><span class="badge warning">⚠️ MONITOREO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Mateo Reyes</td>
+                                <td><strong style="color: #f59e0b;">4.8</strong></td>
+                                <td><span class="badge warning">⚠️ MONITOREO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gráficos de Analytics -->
+            <div class="grid-2x2">
+                <div class="card">
+                    <h3>📊 Distribución por Categoría</h3>
+                    <canvas id="conductChart"></canvas>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Conductas Más Frecuentes</h3>
+                    <canvas id="frequencyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Estadísticas Generales -->
+            <div class="card mt-20">
+                <h3>📊 Estadísticas Generales</h3>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <span>Total de Estudiantes</span>
+                        <strong>145</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Promedio General</span>
+                        <strong>7.2</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Desviación Estándar</span>
+                        <strong>2.1</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Percentil 75</span>
+                        <strong>8.5</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Percentil 25</span>
+                        <strong>5.8</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>En Riesgo (&lt;5.0)</span>
+                        <strong style="color: #ef4444;">12</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Análisis por Clase -->
+            <div class="card mt-20">
+                <h3>📚 Desempeño por Curso</h3>
+                <table class="analytics-table">
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Estudiantes</th>
+                            <th>Promedio</th>
+                            <th>Mejor</th>
+                            <th>Peor</th>
+                            <th>Categoría Dominante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6A</td>
+                            <td>32</td>
+                            <td><strong>7.5</strong></td>
+                            <td>9.5</td>
+                            <td>4.8</td>
+                            <td><span class="badge good">Bueno</span></td>
+                        </tr>
+                        <tr>
+                            <td>7B</td>
+                            <td>28</td>
+                            <td><strong>7.1</strong></td>
+                            <td>8.3</td>
+                            <td>2.1</td>
+                            <td><span class="badge good">Bueno</span></td>
+                        </tr>
+                        <tr>
+                            <td>8A</td>
+                            <td>35</td>
+                            <td><strong>6.8</strong></td>
+                            <td>8.0</td>
+                            <td>3.5</td>
+                            <td><span class="badge regular">Regular</span></td>
+                        </tr>
+                        <tr>
+                            <td>9C</td>
+                            <td>30</td>
+                            <td><strong>7.6</strong></td>
+                            <td>8.8</td>
+                            <td>5.2</td>
+                            <td><span class="badge good">Bueno</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Insights -->
+            <div class="card mt-20" style="border-left: 4px solid #2563eb; background: rgba(37, 99, 235, 0.05);">
+                <h3>🔍 Insights Clave</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>🎯 Clase con Mejor Desempeño:</strong> 9C (7.6 promedio) - Replicar estrategias pedagógicas</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>⚠️ Necesita Atención:</strong> 8A con 35 estudiantes y promedio 6.8 - Requiere intervención</li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;"><strong>📈 Tendencia Positiva:</strong> 64 conductas positivas más que la semana anterior</li>
+                    <li style="padding: 10px 0;"><strong>🎖️ Éxito Notable:</strong> 2 estudiantes con puntuación superior a 9.0 (Excelente)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================
+             SECCIÓN 3: ESTUDIANTES
+             ============================================ -->
+        <div id="students" class="section">
+            <h2>👥 Gestión de Estudiantes</h2>
+
+            <!-- Buscador y Filtros -->
+            <div class="search-bar">
+                <input type="text" id="searchStudent" placeholder="🔍 Buscar estudiante por nombre...">
+                <select id="filterClass">
+                    <option value="">Todas las clases</option>
+                    <option value="6A">6A</option>
+                    <option value="7B">7B</option>
+                    <option value="8A">8A</option>
+                    <option value="9C">9C</option>
+                </select>
+            </div>
+
+            <!-- Tabla de Estudiantes -->
+            <div class="card">
+                <table class="students-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Clase</th>
+                            <th>Puntuación</th>
+                            <th>Categoría</th>
+                            <th>Sanción</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- Se llenará con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============================================
+             SECCIÓN 4: DECISIONES
+             ============================================ -->
+        <div id="decisions" class="section">
+            <h2>📝 Registro de Decisiones</h2>
+
+            <!-- Formulario para agregar decisiones -->
+            <div class="add-decision">
+                <h3>➕ Registrar Nueva Decisión</h3>
+                <form id="decisionForm" onsubmit="addDecision(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="decisionType">Tipo de Decisión *</label>
+                            <select id="decisionType" required>
+                                <option value="">Seleccionar tipo...</option>
+                                <option value="Diálogo Formativo">Diálogo Formativo</option>
+                                <option value="Amonestación">Amonestación</option>
+                                <option value="Suspensión">Suspensión</option>
+                                <option value="Derivación RRHH">Derivación a RRHH</option>
+                                <option value="Reconocimiento">Reconocimiento</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="decisionAffected">Estudiantes/Cursos Afectados *</label>
+                            <input type="text" id="decisionAffected" placeholder="Ej: Juan Pérez, Curso 6A" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="decisionSummary">Resumen de la Decisión *</label>
+                        <textarea id="decisionSummary" placeholder="Describe la decisión tomada, medidas aplicadas y justificación..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">📝 Registrar Decisión</button>
+                </form>
+            </div>
+
+            <!-- Listado de Decisiones -->
+            <div class="decisions-list">
+                <h3>📋 Historial de Decisiones</h3>
+                <div id="decisionsContainer">
+                    <!-- Se llenará con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         MODAL - DETALLE DE ESTUDIANTE
+         ============================================ -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeStudentDetail()">&times;</span>
+            
+            <h2 id="studentName"></h2>
+
+            <!-- Información Principal -->
+            <div class="student-info">
+                <div class="info-group">
+                    <label>Clase</label>
+                    <p id="studentClass"></p>
+                </div>
+                <div class="info-group">
+                    <label>Puntuación Actual</label>
+                    <p id="studentScore"></p>
+                </div>
+                <div class="info-group">
+                    <label>Categoría</label>
+                    <p id="studentCategory"></p>
+                </div>
+                <div class="info-group">
+                    <label>Sanción Actual</label>
+                    <p id="studentSanction"></p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="switchTab('profile')">📊 Perfil</button>
+                <button class="tab-btn" onclick="switchTab('simulator')">⚙️ Simulador</button>
+                <button class="tab-btn" onclick="switchTab('history')">📜 Historial</button>
+            </div>
+
+            <!-- TAB 1: PERFIL -->
+            <div id="profile" class="tab-content active">
+                <h3>📊 Gráfico de Evolución</h3>
+                <div class="score-evolution">
+                    <canvas id="studentScoreChart"></canvas>
+                </div>
+            </div>
+
+            <!-- TAB 2: SIMULADOR -->
+            <div id="simulator" class="tab-content">
+                <h3>⚙️ Simulador de Medidas</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">Selecciona una medida para ver cómo afecta la puntuación y la sanción del estudiante.</p>
+
+                <form id="measureForm" onsubmit="addMeasure(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="measureType">Tipo de Medida *</label>
+                            <select id="measureType" required>
+                                <option value="">Seleccionar medida...</option>
+                                <option value="talk">💬 Diálogo Reflexivo (+0.3)</option>
+                                <option value="work">📚 Trabajo Especial (+0.7)</option>
+                                <option value="alert">⚠️ Advertencia (-0.5)</option>
+                                <option value="suspension">🚫 Suspensión 1 Día (-1.0)</option>
+                                <option value="suspension3">🚫 Suspensión 3 Días (-2.0)</option>
+                                <option value="parent">👨‍👩‍👧 Citación de Apoderado (-1.5)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="measureReason">Razón de la Medida *</label>
+                            <input type="text" id="measureReason" placeholder="Describe por qué se aplica esta medida..." required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">✅ Aplicar Medida</button>
+                </form>
+
+                <div class="simulator" style="margin-top: 30px;">
+                    <h4>📈 Simulación de Impacto</h4>
+                    <div class="simulator-result">
+                        <p><strong>Puntuación Actual:</strong> <span id="simCurrent">-</span>/10</p>
+                        <p><strong>Puntuación Proyectada:</strong> <span id="simProjected">-</span>/10</p>
+                        <p><strong>Nueva Categoría:</strong> <span id="simCategory">-</span></p>
+                        <p><strong>Nueva Sanción:</strong> <span id="simSanction">-</span></p>
+                        <p><strong>Probabilidad de Mejora:</strong> <span id="simProbability">-</span></p>
+                    </div>
+                </div>
+
+                <div class="measures-history">
+                    <h3>📋 Medidas Aplicadas</h3>
+                    <div id="measuresHistory">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: HISTORIAL -->
+            <div id="history" class="tab-content">
+                <h3>📜 Historial de Conducta</h3>
+                <div id="conductHistory" class="history-list">
+                    <!-- Se llenará con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
