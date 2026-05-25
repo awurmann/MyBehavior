@@ -1,0 +1,893 @@
+/* ============================================
+   VARIABLES Y TEMAS
+   ============================================ */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --secondary: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --success: #10b981;
+    --info: #3b82f6;
+    
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    
+    --excellent: #10b981;
+    --good: #3b82f6;
+    --regular: #f59e0b;
+    --insufficient: #ef4444;
+    
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   RESET Y ESTILOS GLOBALES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 40px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+
+.navbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: var(--bg-white);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.nav-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-white);
+    color: var(--text-dark);
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.nav-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+
+.section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* ============================================
+   GRILLAS
+   ============================================ */
+
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.big-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 15px 0;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.badge.excellent {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--excellent);
+}
+
+.badge.good {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--good);
+}
+
+.badge.regular {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--regular);
+}
+
+.badge.warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--regular);
+}
+
+.badge.danger {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.badge.insufficient {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--insufficient);
+}
+
+.badge-alert {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+/* ============================================
+   COMPARATIVA SEMANAL
+   ============================================ */
+
+.comparison-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.week-card {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 25px;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: var(--shadow);
+}
+
+.week-card.highlight {
+    border: 3px solid var(--success);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.week-card h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.week-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+}
+
+.stat .label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stat .value {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.stat .value.positive {
+    color: var(--success);
+}
+
+.stat .value.negative {
+    color: var(--danger);
+}
+
+.stat .value.neutral {
+    color: var(--primary);
+}
+
+.comparison-arrow {
+    font-size: 2em;
+    color: var(--primary);
+}
+
+.change-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    background: var(--bg-white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+}
+
+.change-item {
+    padding: 15px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.change-item.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+/* ============================================
+   TABLAS
+   ============================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background: var(--bg-light);
+    border-bottom: 2px solid var(--border-color);
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background: var(--bg-light);
+}
+
+.analytics-table {
+    width: 100%;
+}
+
+.students-table {
+    width: 100%;
+    background: var(--bg-white);
+}
+
+/* ============================================
+   BÚSQUEDA Y FILTROS
+   ============================================ */
+
+.search-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-bar input,
+.search-bar select {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1em;
+    transition: var(--transition);
+}
+
+.search-bar input:focus,
+.search-bar select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1em;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn-primary,
+.btn-detail {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-detail {
+    background: var(--info);
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.btn-detail:hover {
+    background: var(--primary-dark);
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    background: var(--bg-white);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: var(--radius);
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.close {
+    float: right;
+    font-size: 1.8em;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.close:hover {
+    color: var(--text-dark);
+}
+
+.modal-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================================
+   INFORMACIÓN DE ESTUDIANTE
+   ============================================ */
+
+.student-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-group {
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+}
+
+.info-group label {
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.info-group p {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ============================================
+   SIMULADOR
+   ============================================ */
+
+.simulator {
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.simulator h4 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.simulator-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.simulator-result p {
+    padding: 10px;
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    font-size: 0.9em;
+}
+
+.simulator-result strong {
+    color: var(--primary);
+    display: block;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/* ============================================
+   HISTORIAL
+   ============================================ */
+
+.history-list,
+.measures-section {
+    background: var(--bg-white);
+}
+
+.history-list h3,
+.measures-section h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.history-item,
+.measure-item,
+.decision-item {
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    border-left: 4px solid var(--primary);
+}
+
+.measure-item {
+    border-left-color: var(--warning);
+}
+
+.decision-item {
+    border-left-color: var(--info);
+}
+
+.history-item .date,
+.measure-item .date,
+.decision-item .date {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.history-item .type,
+.measure-item .type,
+.decision-item .type {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+/* ============================================
+   DECISIONES
+   ============================================ */
+
+.add-decision {
+    background: var(--bg-white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.decisions-list {
+    background: var(--bg-white);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.decisions-list h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+#decisionsContainer {
+    display: grid;
+    gap: 15px;
+}
+
+/* ============================================
+   GRÁFICOS
+   ============================================ */
+
+.card canvas {
+    max-height: 300px;
+    margin-top: 15px;
+}
+
+.score-evolution canvas {
+    max-height: 250px;
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.add-decision {
+    background: var(--bg-white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+}
+
+.stats-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.stat-item span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 1.5em;
+    color: var(--primary);
+}
+
+.trend-up {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.trend-down {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.measures-history {
+    border-top: 2px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.measures-history h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .grid-2x2,
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-container {
+        flex-direction: column;
+    }
+
+    .comparison-arrow {
+        transform: rotate(90deg);
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 20px;
+    }
+
+    .student-info {
+        grid-template-columns: 1fr;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar input,
+    .search-bar select {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 20px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .card,
+    .add-decision,
+    .decisions-list {
+        padding: 15px;
+    }
+
+    .modal-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        min-width: 100px;
+    }
+}
