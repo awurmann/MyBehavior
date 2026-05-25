@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seguimiento Formativo Maimonides</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Seguimiento Formativo</h1>
+        <p id="subtitle">Sistema de conducta escolar</p>
+      </div>
+      <div class="actions">
+        <label class="button primary">
+          <span>Subir Excel semanal</span>
+          <input id="fileInput" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+        </label>
+        <button id="downloadTemplate" class="button">Plantilla CSV</button>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Vistas">
+      <button class="tab active" data-view="dashboard">Dashboard</button>
+      <button class="tab" data-view="students">Estudiantes</button>
+      <button class="tab" data-view="classes">Clases</button>
+      <button class="tab" data-view="map">Mapa de faltas</button>
+    </nav>
+
+    <main>
+      <section class="filters" aria-label="Filtros">
+        <input id="searchInput" type="search" placeholder="Buscar estudiante..." />
+        <select id="classFilter">
+          <option value="">Todos los cursos</option>
+        </select>
+        <input id="fromDate" type="date" />
+        <input id="toDate" type="date" />
+      </section>
+      <p id="importStatus" class="status"></p>
+
+      <section id="dashboardView" class="view active">
+        <div class="metrics">
+          <article class="metric">
+            <span>Estudiantes</span>
+            <strong id="metricStudents">0</strong>
+          </article>
+          <article class="metric danger">
+            <span>Alertas RIG</span>
+            <strong id="metricRig">0</strong>
+          </article>
+          <article class="metric warning">
+            <span>Requieren acompañamiento</span>
+            <strong id="metricSupport">0</strong>
+          </article>
+          <article class="metric good">
+            <span>En mejora sostenida</span>
+            <strong id="metricImproving">0</strong>
+          </article>
+        </div>
+
+        <div class="grid stack">
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Alumnos que requieren acompañamiento</h2>
+              <span>Puntaje formativo y alertas RIG separados</span>
+            </div>
+            <div id="supportList" class="table-wrap"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Seguimiento de ultimas 4 semanas</h2>
+              <span>Semana actual primero</span>
+            </div>
+            <div id="changesList" class="table-wrap"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="studentsView" class="view">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Estudiantes</h2>
+            <span id="studentCount">0 registros</span>
+          </div>
+          <div id="studentsTable" class="table-wrap"></div>
+        </section>
+      </section>
+
+      <section id="classesView" class="view">
+        <div id="classesGrid" class="class-grid"></div>
+      </section>
+
+      <section id="mapView" class="view">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Mapa oficial de faltas</h2>
+            <span id="mapCount">0 codigos</span>
+          </div>
+          <div id="mapTable" class="table-wrap"></div>
+        </section>
+      </section>
+    </main>
+
+    <aside id="studentDrawer" class="drawer" aria-hidden="true">
+      <div class="drawer-card">
+        <button id="closeDrawer" class="icon-button" aria-label="Cerrar">x</button>
+        <div id="drawerContent"></div>
+      </div>
+    </aside>
+
+    <script src="./map-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

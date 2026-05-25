@@ -1,0 +1,62 @@
+﻿Codigo,Puntaje,Descripcion,Tipo,PFA,RIG,PuntajeCongelado,Categoria
+A1,1,No asiste a Tefilah,Negative,SI,NO,NO,A
+A2,0.5,"Llega tarde a las actividades programadas (tefilá, recreo, Intersesión).",Negative,SI,NO,NO,A
+A3,0.5,No cumple con el uniforme señalado en el Handbook.,Negative,SI,NO,NO,A
+A4,0.5,"Presentación personal inadecuada (falta de aseo, descuido evidente de la vestimenta).",Negative,SI,NO,NO,A
+A5,0.25,Asiste a clases sin los materiales solicitados.,Negative,SI,NO,NO,A
+A6,0.25,No mantiene la limpieza y el orden de su espacio de trabajo.,Negative,SI,NO,NO,A
+A8,1,"Interrumpe la clase y el ambiente de aprendizaje, pese ha llamado de atención previo.",Negative,SI,NO,NO,A
+A9,0.25,Ingiere alimentos o bebidas en clases.,Negative,SI,NO,NO,A
+A10,0.25,No trabaja en clases a pesar de darle varias oportunidades.,Negative,SI,NO,NO,A
+A13,0.25,No cumple con tareas o trabajos asignados.,Negative,SI,NO,NO,A
+A14,0.25,Sin firma en: Libreta Com. y-o Tareas y-o Pruebas.,Negative,SI,NO,NO,A
+A15,0.25,No entrega tarea o trabajo en la fecha indicada.,Negative,SI,NO,NO,A
+A16,0.25,Realiza trabajos o estudio de otras asignaturas en el horario que no corresponde.,Negative,SI,NO,NO,A
+B1,2,Sale de la sala sin autorización.,Negative,SI,NO,NO,B
+B3,3,Raya y-o dibujar diseños o imágenes ofensivas y-u obscenas (grafitis) en el colegio o en actividades del mismo.,Negative,SI,NO,NO,B
+B4,3,Desobedece instrucciones durante situaciones de emergencia.,Negative,SI,NO,NO,B
+B5,2,"No cumple con las normativas de los lugares que se visitan en salidas, viajes o giras o representando al colegio.",Negative,SI,NO,NO,B
+B6,2,"No acata las instrucciones de Morot o Morim o acompañantes en salidas, viajes o giras.",Negative,SI,NO,NO,B
+B7,3,Causa daño grave a la infraestructura del colegio y-o bienes de otros.,Negative,SI,NO,NO,B
+B8,3,"Ausencia a clase quedándose dentro del recinto, sin justificación (capeo).",Negative,SI,NO,NO,B
+B9,6,"Daña y-o adultera datos informáticos oficiales del colegio, mediante hackeo, crakeo, etc.",Negative,SI,NO,NO,B
+B10,3,"Ingresa a sectores prohibidos, donde existe un riesgo para el estudiante, y todos aquellos que cuenten con la señalética Prohibido el ingreso.",Negative,SI,NO,NO,B
+B12,3,Es sorprendido requiriendo o entregando información durante pruebas.,Negative,SI,NO,NO,B
+B13,6,Adultera firma en comunicaciones o cualquier documento oficial del colegio.,Negative,SI,NO,NO,B
+B16,3,Incumple los acuerdos y-o compromisos adquirido con el colegio.,Negative,SI,NO,NO,B
+B17,3,Se expresa en forma irrespetuosa y-o poco apropiada a un miembro de la comunidad educativa.,Negative,SI,NO,NO,B
+B18,3,Discrimina y-o denosta arbitrariamente a cualquier miembro de la comunidad.,Negative,SI,NO,NO,B
+C1,7,Incita y-o participa en peleas o riñas fuera o dentro del colegio.,Negative,NO,SI,NO,C
+C2,7,"Agrede física, psicológica o moral a otro miembro de la comunidad escolar.",Negative,NO,SI,NO,C
+C3,7,Utiliza herramientas tecnológicas y-o plataformas virtuales para realizar acoso o intimidación.,Negative,NO,SI,NO,C
+C4,8,"Porta todo tipo de armas (blancas y-o fuego), instrumentos, utensilios u objetos cortantes, amenazantes, punzantes o contundentes.",Negative,NO,SI,NO,C
+C5,7,Se presenta al colegio bajo los efectos del alcohol y-o Drogas.,Negative,NO,SI,NO,C
+C6,8,"Consume y-o porta alcohol y-o cualquier tipo de droga y-o tabaco, dentro del establecimiento, en actividades escolares o representando al colegio.",Negative,NO,SI,NO,C
+C7,8,Realiza acoso o abuso sexual a cualquier miembro de la comunidad dentro o fuera del establecimiento.,Negative,NO,SI,NO,C
+C8,8,"Realiza acciones que pongan en riesgo la seguridad de la comunidad (incendiar, falsa alarma de bomba, bomba de sonido).",Negative,NO,SI,NO,C
+C9,8,"Coacción o intimidación a terceros de manera reiterada, realizada dentro o fuera del colegio (Bullying).",Negative,NO,SI,NO,C
+C10,6,Utiliza aparatos tecnológicos estando dentro del recinto escolar.,Negative,NO,SI,SI,C
+C11,6,"Ocultamiento de bienes, o apropiarse indebidamente de objetos o dinero.",Negative,NO,SI,NO,C
+C12,8,Porta y-o usa fuegos artificiales y-o sustancias peligrosas que atenten contra la seguridad de la comunidad.,Negative,NO,SI,NO,C
+C13,7,Realiza insinuaciones o comentarios de connotación sexual.,Negative,NO,SI,NO,C
+DT,0,Disciplina de Trabajo,Positive,SI,NO,NO,DT
+DT1,-0.25,Llega constantemente puntual al colegio y-o a clases.,Positive,SI,NO,NO,DT
+DT2,-0.25,Asiste a clases con todos sus materiales.,Positive,SI,NO,NO,DT
+DT3,-0.25,Su presentación personal es adecuada e impecable.,Positive,SI,NO,NO,DT
+DT4,-0.25,Se presenta constantemente con uniforme completo.,Positive,SI,NO,NO,DT
+DT5,-0.25,"Realiza constantemente sus trabajos con orden, limpieza y están al día.",Positive,SI,NO,NO,DT
+DT6,-0.25,"Alumno muy responsable, entrega sus trabajos y tareas en forma oportuna.",Positive,SI,NO,NO,DT
+DT7,-0.25,Colabora con el orden y limpieza de la sala y del colegio.,Positive,SI,NO,NO,DT
+EA,-0.5,Excelencia Académica,Positive,SI,NO,NO,EA
+EA1,-1,Se esfuerza por superar dificultades y alcanzar logros.,Positive,SI,NO,NO,EA
+EA2,-1,Aporta reflexiones e ideas propias en clases.,Positive,SI,NO,NO,EA
+EA3,-0.5,Demuestra autonomía y responsabilidad en su aprendizaje.,Positive,SI,NO,NO,EA
+EA4,-0.5,"Su actitud en clases (de escucha, participación activa y respeto) favorece un buen clima de aprendizaje.",Positive,SI,NO,NO,EA
+FV,-1,Formación Valórica,Positive,SI,NO,NO,FV
+FV1,-0.5,Mantiene una actitud de respeto hacia todos los miembros de la comunidad escolar.,Positive,SI,NO,NO,FV
+FV2,-1,Muestra empatía y sensibilidad por las necesidades y sentimientos de los demás.,Positive,SI,NO,NO,FV
+FV3,-1,"Reconoce sus errores, se esfuerza en enmendarlos y repararlos.",Positive,SI,NO,NO,FV
+FV4,-1,Favorece la inclusión en la comunidad escolar.,Positive,SI,NO,NO,FV
+FV5,-1,Asume con responsabilidad las actividades en que se compromete.,Positive,SI,NO,NO,FV
+FV6,-1,"Es un líder facilitador, que colabora y pone sus capacidades al servicio del bien común.",Positive,SI,NO,NO,FV
+FV7,-1,"Actúa con integridad y honradez, asumiendo la responsabilidad de sus propios actos y las consecuencias derivadas de ellos.",Positive,SI,NO,NO,FV
