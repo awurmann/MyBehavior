@@ -1,0 +1,19 @@
+{
+  "name": "mybehavior",
+  "version": "1.0.0",
+  "description": "Sistema Formativo de Seguimiento de Conducta Escolar",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "npx http-server -p 8000"
+  },
+  "keywords": [
+    "conducta",
+    "escolar",
+    "seguimiento",
+    "educación"
+  ],
+  "author": "awurmann",
+  "license": "MIT"
+}
